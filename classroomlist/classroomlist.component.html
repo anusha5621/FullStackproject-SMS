@@ -1,0 +1,43 @@
+<body>
+    <header>
+    <h2> ClassRoomList </h2>
+</header>
+    <div class="list row">
+        <div class="col-md-8">
+            <div class="input-group mb-3">
+                <div class="table-container">
+                <table class = "table table-striped">
+                    <thead>
+                        <tr>
+                            <th>ClassRoomName</th>
+                            <th> AboutClassRomm </th>
+                            <th> Actions </th>
+                            <tr *ngFor = "let classRoom of classRooms | paginate: { itemsPerPage: count, currentPage: p }" >
+                                
+    
+                                <td> {{classRoom.className }} </td>
+                                <td> {{ classRoom.description }} </td>
+                                <td>
+                                    <div class="btn-group">
+                                     <button (click) = "updateClassRoom(classRoom.classRoomNo)" class = "btn btn-outline-primary"> Update</button>
+                                      <button (click) = "deleteClassRoom(classRoom.classRoomNo)" class = "btn btn-outline-danger" style="margin-left: 10px"> Delete</button>
+                                      <button (click) = "viewClassRoom(classRoom.classRoomNo)" class = "btn btn-outline-info" style="margin-left: 10px"> View</button> 
+                                  
+                                    </div>
+                                    </td>
+                                
+                            
+                        </tr>
+                        <tr *ngIf ="classRooms.length !==0" >
+                            <button class="m-3 btn btn-sm btn-danger" (click)="removeAllClassRooms()">
+                                  Remove All
+                                </button>
+                          </tr>
+                    </thead>
+                    <tbody>
+                    </table>
+                </div>
+                <div class="text-center" style="color: rgb(41, 22, 250);">
+                    <pagination-controls (pageChange)="p = $event" class="custom-pagination"></pagination-controls>
+                  </div>
+                  

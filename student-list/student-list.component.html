@@ -1,0 +1,98 @@
+<body>
+  <header>
+    <h2> Student List </h2>
+  </header>
+  <div class="list row"> 
+    <div class="col-md-12">
+      <table class="first-table">
+        <thead>
+          <tr>
+            <th class="first-th" colspan="4"style="width=200px" >
+              <div class="input-group">
+                <label for="searchMethod">Filter  : </label>
+                <select id="searchMethod" [(ngModel)]="selectedSearchMethod">
+                  <option value="location">Search by Location</option>
+                  <option value="qualification">Search by Grade </option>
+                 </select>
+                
+                <div *ngIf="selectedSearchMethod === 'location'">
+                  <label for="location">Location:</label>
+                  <input id="location" [(ngModel)]="location" />
+                  <button (click)="searchBylocation()">Search</button>
+                </div>
+                <div *ngIf="selectedSearchMethod === 'qualification'">
+                  <label for="qualification">Qualification :</label>
+                  <input id="qualification" [(ngModel)]="grade" />
+                  <button (click)="searchByGrade()">Search</button>
+                </div>
+              </div>
+            </th>
+            <th class="first-th" colspan="2">
+              <!-- Status Dropdown -->
+              <div class="dropdown">
+                <button class="dropbtn">Status</button>
+                <div class="dropdown-content">
+                  <a (click)="getSecondaryStudents()">Secondary Students</a>
+                  <a (click)="getNonSecondaryStudents()">Primary Students</a>
+                </div>
+              </div>
+            </th> 
+            <th class="first-th" colspan="2">
+              <!-- SortBy Dropdown -->
+              <div class="dropdown">
+                <button class="dropbtn">SortBy</button>
+                <div class="dropdown-content">
+                  <a (click)="sortBymarks('LowGrade')">Marks low-high</a>
+                  <a (click)="sortBymarks('HighGrade')">Marks high-low</a>
+                  <a (click)="sortByStudentName('AtoZ')">Student List A to Z</a>
+                  <a (click)="sortByStudentName('ZtoA')">Student List Z to A</a>
+                </div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+      </table>
+ 
+ 
+        <div class="table-table-dark">
+          <table class="table">
+
+        <tr>
+            <th>Student Name</th>
+            <th> Student Contact </th>
+            <th> Student Location</th>
+            <th> Qualification</th>
+            <th> Student Marks</th>
+            <th> Actions </th>
+            
+        </tr>
+ 
+    <tbody>
+      <tr class="table-active" *ngFor = "let student of students | paginate: { itemsPerPage: count, currentPage: p }" >
+    
+            <td> {{student.studentName }} </td>
+            <td> {{ student.studentMobile }} </td>
+            <td> {{ student.location }} </td>
+            <td> {{ student.qualification }} </td>
+           <td> {{ student.studentMarks }} </td>
+            <td>
+              <div class="btn-group">
+               <button (click) = "updateStudent(student.studentRollNo)" class = "btn btn-outline-primary"> Update</button>
+                <button (click) = "deleteStudent(student.studentRollNo)" class = "btn btn-outline-danger" style="margin-left: 10px"> Delete</button>
+                <button (click) = "viewStudent(student.studentRollNo)" class = "btn btn-outline-info" style="margin-left: 10px"> View</button> 
+            
+              </div>
+              </td>
+        </tr>
+        <tr *ngIf="students.length !== 0">
+          <button class="m-3 btn btn-sm btn-danger" (click)="removeAllStudents()">
+                Remove All
+              </button>
+        </tr>
+    </tbody> 
+</table>
+</div>
+
+<div class="text-center" style="color: rgb(20, 246, 8);">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>

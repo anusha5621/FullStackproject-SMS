@@ -1,0 +1,41 @@
+
+  
+   <div class="card mx-auto" style="width: 50%;">
+    <div class="container">
+        <header>
+  <h4>Login Form</h4>
+</header>
+       
+         </div>
+         <div class="control-group"> 
+          <!-- E-mail -->
+         <label class="control-label" for="email">E-mail</label>
+          <div class="controls">
+            <input type="email" id="email" name="email" placeholder="Enter your email" class="input-xlarge" #email>
+
+          </div>
+        </div>
+        <div class="control-group">
+          <!-- Password-->
+          <label class="control-label" for="password">Password</label>
+          <div class="controls">
+            <input type="password" id="password" name="password" placeholder="Enter Password" class="input-xlarge" #password>
+
+          </div>
+        </div>
+            <div class="content">
+              
+               <div class="pass-link">
+                  <a href="#">Forgot password?</a>
+               </div>
+            </div>
+            <div class="field">
+              
+               <button class="btn btn-success submit-button"  type ="submit"(click)="signin(email.value,password.value)">Login</button>
+            </div>
+            <div class="signup-link">
+               Not a member? <a (click)="signup()">Signup now</a>
+            </div>
+         
+      </div>
+

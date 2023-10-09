@@ -1,0 +1,173 @@
+ .h2{
+  font-style:italic ;
+  text-align: left;
+ }
+ 
+.dropbtn {
+  background-color: #811331;
+  
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+
+}
+.first-table{
+  height: 10px;
+  width:1000px
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+  border-color: rgb(255, 196, 240);
+  padding: 10px;
+  border: none;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  text-align: left;
+  background-image: radial-gradient(circle, #553c9a, #ee4b2b);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(132, 6, 228, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px,14px;
+  text-decoration: none;
+  display: block;
+  font-style:italic;
+}
+
+.dropdown-content a:hover {background-color:purple}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color:purple;}
+
+.search-container {
+  box-sizing: inherit;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.table-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+}
+
+
+table {
+  border-collapse: collapse;
+  width: 80%; 
+}
+
+table,th, td {
+  border: 2px solid #ddd;
+  padding: 8px;
+  text-align: left; 
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.first-th{
+  background-image: radial-gradient(circle, #553c9a, #ee4b2b);
+  font-style: italic;
+
+}
+th{
+  background-color:purple;
+  color: white;
+  font-style: italic;
+}
+.table { 
+
+  background-color:lightgreen;
+font-style: italic;
+
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-select {
+  margin-left: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+/* search.component.css */
+
+/* Style the container div */
+div {
+  margin: 3px;
+}
+
+/* Style the label for the dropdown */
+label {
+  text-align: center;
+  font-style:italic ;
+}
+
+/* Style the select dropdown */
+select {
+  width: 200px;
+  padding: 3px;
+  font-style: italic;
+}
+
+/* Style the input fields */
+input {
+  width: 200px;
+  padding: 3px;
+  margin-right: 10px;
+  font-style: italic;
+}
+
+/* Style the search button */
+
+
+/* Style the search results */
+h2 {
+  margin-top: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #f7f7f7;
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 1px solid #ddd;
+}
+
+/* Add more styles as needed */
+header h2 {
+  font-size: 40px;
+  font-weight: 500;
+  background-image: radial-gradient(circle, #553c9a, #ee4b2b);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-align: center;
+  font-style: italic;
+}

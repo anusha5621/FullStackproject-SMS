@@ -1,0 +1,56 @@
+
+
+<div class="col-md-6 offset-md-3">
+    <div class="card mx-auto" style="width: 50%;">
+        <header>
+            <h4> Update Student </h4>
+          </header>
+
+    <div>
+    <form (ngSubmit) = "onSubmit()">
+     <div class="form-group">
+            <label> Student RollNo</label>
+            <input type="text" class ="form-control" id = "studentRollNo"
+                [(ngModel)] = "student.studentRollNo" name = "studentRollNo">
+        </div> 
+        <div class="form-group">
+            <label> Student Name</label> 
+            <input type="text" class ="form-control" id = "studentName"
+                [(ngModel)] = "student.studentName" name = "studentName">
+        </div>
+    
+        <div class="form-group">
+            <label> Student Contact </label>
+            <input type="text" class ="form-control" id = "studentMobile"
+                [(ngModel)] = "student.studentMobile" name = "studentMobile">
+        </div>
+<div class="form-group">
+            <label>Student Location</label>
+            <input type="text" class ="form-control" id = "location"
+                [(ngModel)] = "student.location" name = "location">
+        </div>
+		
+		 <div class="form-group">
+            <label> Qualification</label>
+            <input type="text" class ="form-control" id = "qualification"
+                [(ngModel)] = "student.qualification" name = "qualification">
+        </div>
+		
+		
+		
+		 <div class="form-group">
+            <label> Student Marks</label>
+            <input type="text" class ="form-control" id = "studentMarks"
+                [(ngModel)] = "student.studentMarks" name = "studentMarks">
+        </div>
+  <button class="btn btn-success submit-button"  type ="submit">Submit</button>
+      
+        
+        <button
+  type="button"
+  class="btn btn-info btn-circle btn-lg btn-lg top-right-button"
+  (click)="back()"
+><span>Back</span></button>
+    
+    </form>
+    </div>

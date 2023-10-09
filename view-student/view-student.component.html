@@ -1,0 +1,47 @@
+
+<div class="card mx-auto" style="width: 50%;">
+        <div class="container">
+            <header>
+      <h4> View Student Details</h4>
+    </header>
+<div>
+    <div>
+        <label> <b> Student Name: </b></label>
+         {{particularStudent.studentName}}
+    </div>
+    <div>
+        <label> <b> Student Contact : </b></label>
+         {{particularStudent.studentMobile}}
+    </div>
+    <div>
+        <label> <b> Student Location </b></label>
+         {{particularStudent.location}}
+
+    </div>
+    <div>
+        <label> <b> Qualification</b></label>
+         {{particularStudent.qualification}}
+    </div>
+    <div>
+    <label> <b> School Name </b></label> 
+    {{particularStudent.schoolName}}
+    </div>
+
+    <div>
+        <label> <b> Student Marks </b></label>
+         {{particularStudent.studentMarks}}
+        </div>
+ <label> <b> isSecondaryStudent </b></label> {{particularStudent.isSecondaryStudent}}
+         </div>
+   
+ 
+        <div>
+            <button (click) = "viewSchool(school.schoolCode)"class = "btn btn-purple"> School Info.</button>
+</div>
+<button type="button" class="btn btn-info btn-circle btn-lg btn-lg top-right-button"
+(click)="back()"><span>Back</span></button>
+
+
+</div>
+</div>
+

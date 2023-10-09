@@ -1,0 +1,86 @@
+\.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;     
+  height: 100vh;        
+}
+
+/* Style your table as needed */
+table {
+  border-collapse: collapse;
+  top: 20px;
+  width: 80%; /* Adjust the table width as needed */
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+.table table-striped{
+align-items: center;
+margin-left: auto;
+margin-right: auto;
+top: 20px;
+
+}
+
+.table { 
+
+background-color:lightgreen;
+font-style: italic;
+margin-top: 30px;
+
+}
+th{
+background-color:purple;
+color: white;
+font-style: italic;
+}
+table,th, td {
+border: 2px solid #ddd;
+padding: 8px;
+text-align: left; 
+margin-left:120px;
+margin-top: 10px;
+text-align: center;
+font-style: italic;
+
+}
+
+header h2 {
+font-size: 40px;
+font-weight: 500;
+background-image: radial-gradient(circle, #553c9a, #ee4b2b);
+color: transparent;
+background-clip: text;
+-webkit-background-clip: text;
+text-align: center;
+font-style: italic;
+margin-top: 30px;
+}
+li {
+background-color: #f7f7f7;
+padding: 10px;
+margin-bottom: 5px;
+border: 1px solid #ddd;
+}
+.custom-pagination {
+margin-top: -10px; /* Add some space between the table and pagination */
+margin-left: 50px;
+}
+.custom-pagination {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.custom-pagination ul.pagination {
+display: flex;
+list-style: none;
+padding: 0;
+margin: 0;
+}
+.italic-text {
+  font-style: italic;
+}

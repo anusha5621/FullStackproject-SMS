@@ -1,0 +1,45 @@
+<body>
+    <header>
+        <h2> SchoolList </h2>
+    </header>
+    <div class="list row">
+        <div class="col-md-8">
+            <div class="input-group mb-3">
+                <table class = "table table-striped">
+                    <thead>
+                        <tr>
+                            <th>SchoolName</th>
+                            <th> SchoolLocation </th>
+                            <th> SchoolFounder</th>
+                            <th> Established Year</th>
+                            <th> Principal Name</th>
+                            <th> Actions </th>
+                            <tr *ngFor = "let school of schools | paginate: { itemsPerPage: count, currentPage: p }" >
+    
+                                <td> {{school.schoolName }} </td>
+                                <td> {{ school.schoolLocation }} </td>
+                                <td> {{ school.schoolFounder }} </td>
+                                <td> {{ school.establishedYear }} </td>
+                                <td> {{ school.principalName }} </td>
+                                <td>
+                                    <div class="btn-group">
+                                     <button (click) = "updateSchool(school.schoolCode)" class = "btn btn-outline-primary"> Update</button>
+                                      <button (click) = "deleteSchool(school.schoolCode)" class = "btn btn-outline-danger" style="margin-left: 10px"> Delete</button>
+                                      <button (click) = "viewSchool(school.schoolCode)" class = "btn btn-outline-info" style="margin-left: 10px"> View</button> 
+                                  
+                                    </div>
+                                    </td>
+                                
+                        </tr>
+                        <tr *ngIf = "schools.length !==0">
+
+                            <button class="m-3 btn btn-sm btn-danger" (click)="removeAllSchools()">
+                                  Remove All
+                                </button>
+                          </tr>
+                    </thead>
+                </table>
+                        <div class="text-center" style="color: rgb(41, 22, 250);">
+                            <pagination-controls (pageChange)="p = $event" class="custom-pagination"></pagination-controls>
+                          </div>
+                          

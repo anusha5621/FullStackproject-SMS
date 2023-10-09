@@ -1,0 +1,59 @@
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <div class="card">
+    <form class="card">
+        <div class="bg-img"> 
+            <header>
+                <h3> Add Feedback</h3>
+              </header>
+    <h5 class="w3-text-lightblue">Please give your valuable feedback on how to improve ourself</h5>
+        <p>
+            <label for="school" >Select a School</label>
+            <select name="schoolCode" id="school" [(ngModel)]="selectedSchoolIds[i]">
+            <option value="select-school">select the book code</option>
+            <option *ngFor="let school of schools" [value]="school.schoolCode">{{school.schoolName}}</option>
+            </select>
+        </p>
+       <p>
+        <label for="school" > School Rating</label>
+            <select name="schoolrating" id="school" [(ngModel)]="feedback.schoolRating">
+            <option value="school-rating">select rating</option>
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
+            </select>
+       </p>
+       <p>
+        <label for="rating" > Overall Rating</label>
+            <select name="overallrating" id="rating" [(ngModel)]="feedback.overallRating">
+            <option value="overall-rating">select rating</option>
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
+            </select>
+       </p>
+        <p>
+            <label><b>Describe your experience:</b></label>
+            <textarea class="w3-input w3-border" name="comments" rows="5" cols="10"[(ngModel)]="feedback.comments"></textarea>
+        </p>  
+        <div class="d-flex justify-content-center">
+            <button (click)="OnSubmit(selectedSchoolIds[i])" class = "btn btn-purple" type ="submit">Submit</button>
+            <button
+            type="button"
+            class="btn btn-info btn-circle btn-lg btn-lg top-right-button"
+            (click)="back()"
+          ><span>Back</span></button>
+          </div> 
+
+   
+</div>
+    </form></div>

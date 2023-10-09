@@ -1,0 +1,47 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<header>
+  <h2>Feedback List </h2>
+</header>
+
+<body>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+          <!-- <th>Feedback Id</th> -->
+          <th>Rating of School</th>
+          <th>Overall rating</th>
+          <th>Comments on School</th>
+          <th>Actions</th>
+        </tr>
+       </thead>
+    
+    <tbody>
+        <tr *ngFor="let feedback of feedbacks | paginate: { itemsPerPage: count, currentPage: p }" >
+       
+           <td class="italic-text">{{feedback.schoolRating}}</td>
+           <td class="italic-text">{{feedback.overallRating}}</td>
+           <td class="italic-text">{{feedback.comments}}</td>
+           <td>
+
+           <button (click)="Showfeedback(feedback.feedBackId)"class = "btn btn-outline-info" style="margin-left: 10px">View</button>
+        <button (click)="deleteFeedback(feedback.feedBackId)"class = "btn btn-outline-danger " style="margin-left: 10px">Delete</button>
+
+                     
+             
+            </td>  
+        
+        </tr>
+        <tr *ngIf = "feedbacks.length !==0">
+
+          <button class="m-3 btn btn-sm btn-danger" (click)="removeAllFeedbacks()">
+                Remove All
+              </button>
+        </tr>
+    </tbody>
+  </table>
+ <div class="text-center" style="color: rgb(41, 22, 250);">
+                    <pagination-controls (pageChange)="p = $event" class="custom-pagination"></pagination-controls>
+                  </div>
+      
+</body>

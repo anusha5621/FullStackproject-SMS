@@ -1,0 +1,94 @@
+.bg-img {
+   
+    background-image:none;
+    min-height: 380px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 700px;
+    position: relative;
+  }
+  form {
+    border: 2px, purple;
+    padding: 5px;
+    border-radius: 5px; 
+  
+  }
+  header h3 {
+    font-size: 40px;
+    font-weight: 500;
+    background-image: radial-gradient(circle, #553c9a, #ee4b2b);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-align: center;
+    font-style: italic;
+  }
+  button[type=submit]{
+
+   text-align:center;
+        border: none;
+        color:white;
+        padding: 15px 30px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+  }
+  label{
+    font-style: italic;
+    padding: 10px;
+  }
+  select{
+    background-image: url("src/assets/images/bk2.jpg");
+  }
+ 
+  .btn-circle.btn-lg {
+    width: 50px;
+    height: 50px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 25px;
+  }
+  
+  .btn-circle.btn-xl {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    font-size: 24px;
+    line-height: 1.33;
+    border-radius: 35px;
+  }
+  
+  
+  /* use negative margins to accommodate wider button text */
+  
+  .btn-circle span {
+    margin: 0 -2rem;
+  }
+  .top-right-button {
+    position: fixed;
+    top: 150px;
+    right: 100px;
+    background-color: black;
+    z-index: 9999; /* Ensure it's above other elements */
+  }
+  .form-container {
+    position: relative;
+  }
+
+  
+.card {
+  border: 2px, purple;
+  padding: 5px;
+  border-radius: 5px;
+  background-image:url("src/assets/images/bk2.jpg");
+  width: 280px;
+  height: 1000px;
+  top:30px;
+}
+.btn-purple {
+  background-color: purple;
+  border-color: purple;
+  color: white; /* Text color */
+}
+  
