@@ -1,0 +1,99 @@
+ <!--<!DOCTYPE html>
+ <html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Hope Academy</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </head>
+  <body>
+<div class="sidebar">
+  <header>Hope Academy</header>
+  <ul>
+    <div class="dropdown" *ngIf="userService.isUserLoggedIn()">
+      <button class="dropbtn">Student Services 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <button *ngIf="userService.isUserLoggedIn()" routerLink="see-all-students" class="btn btn-link nav-link">studentlist</button>
+        <button *ngIf="userService.isUserLoggedIn()" routerLink="/create-student"  class="btn btn-link nav-link">add student</button>
+          </div>
+        </div>
+  </ul>
+</div>
+  </body>
+ </html>-->
+<nav class="navbar navbar-expand-sm custom-navbar navbar-dark ">
+  <a class="navbar-brand" href="#">
+    <img src="assets/images/hope.png" alt="">
+  </a>
+  <div class="container-fluid">
+    <div class="navbar-collapse">
+      <ul class="navbar-nav me-auto">
+        <div class="dropdown" *ngIf="userService.isUserLoggedIn()">
+          <button class="dropbtn">Student Services 
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+        <button *ngIf="userService.isUserLoggedIn()" routerLink="see-all-students" class="btn btn-link nav-link">studentlist</button>
+        <button *ngIf="userService.isUserLoggedIn()" routerLink="/create-student"  class="btn btn-link nav-link">add student</button>
+          </div>
+        </div>
+        <div class="dropdown" *ngIf="userService.isUserLoggedIn()">
+          <button class="dropbtn">School Services 
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+        <button *ngIf="userService.isUserLoggedIn()" routerLink="/see-all-schools" class="btn btn-link nav-link">school List</button>
+        <button *ngIf="userService.isUserLoggedIn()" routerLink="/create-school" class="btn btn-link nav-link">Add school</button>
+      </div>
+    </div>
+    <div class="dropdown" *ngIf="userService.isUserLoggedIn()">
+      <button class="dropbtn">Teacher Services
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <button *ngIf="userService.isUserLoggedIn()" routerLink="/see-all-teachers" class="btn btn-link nav-link">teachers</button>
+        <button *ngIf="userService.isUserLoggedIn()" routerLink="create-teacher" class="btn btn-link nav-link">add teacher</button>
+      </div>
+    </div>
+    <div class="dropdown" *ngIf="userService.isUserLoggedIn()">
+      <button class="dropbtn">ClassRoom Services
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <button *ngIf="userService.isUserLoggedIn()" routerLink="/see-all-classRooms" class="btn btn-link nav-link">ClassRooms</button>
+        <button *ngIf="userService.isUserLoggedIn()" routerLink="/create-classRoom" class="btn btn-link nav-link">add ClassRoom</button>
+      </div>
+    </div>
+    <div class="dropdown" *ngIf="userService.isUserLoggedIn()">
+      <button class="dropbtn">Feedback Services
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <button *ngIf="userService.isUserLoggedIn()" routerLink="feed-back" class="btn btn-link nav-link">FeedbackList</button>
+        <button *ngIf="userService.isUserLoggedIn()" (click)="feedback()" class="btn btn-link nav-link">Add Feedback</button>
+      </div>
+    </div>
+        
+        <button *ngIf="userService.isUserLoggedIn()" routerLink="about-us" class="btn btn-link nav-link">AboutUs</button>
+        <button *ngIf="userService.isUserLoggedIn()" routerLink="contact-us" class="btn btn-link nav-link">ContactUs</button>
+       
+        
+        
+        <button *ngIf="userService.isUserLoggedIn()" (click)="logOut()"class="btn-btn-nav-link">LogOut</button>
+    
+      </ul>
+        </div>
+  </div>
+</nav>
+
+<div class="card" *ngIf="!userService.isUserLoggedIn() && !isLoginClicked">
+  <p>Welcome to Hope University</p>
+  <button class="btn btn-link nav-link" routerLink="sign-in" (click)="isLoginClicked = true">Login</button>
+</div>
+<!--<h1 class="text-center" style="color:verdana" text-align = "center">Welcome to Student Hope University</h1>
+<h1 class="text-center" style="color:#FFFF"> {{title}} </h1>-->
+
+<router-outlet></router-outlet> 
